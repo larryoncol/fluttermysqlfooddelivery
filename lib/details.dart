@@ -38,7 +38,9 @@ class _DetailsState extends State<Details> {
             MaterialButton(
               child: Text("EDIT"),
               color: Colors.deepOrangeAccent,
-              onPressed: (){},
+              onPressed: (){
+
+              },
             ),
             MaterialButton(
               child: Text("DELETE"),

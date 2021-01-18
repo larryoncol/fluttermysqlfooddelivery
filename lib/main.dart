@@ -4,6 +4,8 @@ import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'newdata.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -42,7 +44,11 @@ class _HomeState extends State<Home> {
         title: Text("My App Bar"),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: ()=>Navigator.of(context).push(
+            MaterialPageRoute(
+                builder: (BuildContext context)=>newData(),
+          )
+        ),
         child: Icon(Icons.add),
       ),
       body: FutureBuilder <List>(
@@ -63,7 +69,6 @@ class _HomeState extends State<Home> {
               // returns information from Items class, contructor used here
               return Items(list:snapshot.data);
             }
-
           else
             {
               return CircularProgressIndicator();
